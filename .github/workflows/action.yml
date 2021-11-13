@@ -16,7 +16,7 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
       - name: Send repo to Dataverse 
-        run: atrisovic/github-action-test@master
+        uses: atrisovic/github-action-test@master
         with:
           DATAVERSE_TOKEN: ${{secrets.DATAVERSE_TOKEN}}
           DATAVERSE_SERVER: https://demo.dataverse.org
