@@ -1,0 +1,24 @@
+name: Push repo to Dataverse
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Run a one-line script
+        run: echo Hello, world!
+      - name: Send repo to Dataverse 
+        run: atrisovic/github-action-test@master
+        with:
+          DATAVERSE_TOKEN: ${{secrets.DATAVERSE_TOKEN}}
+          DATAVERSE_SERVER: https://demo.dataverse.org
+          DATAVERSE_DATASET_DOI: ${{secrets.DATAVERSE_DATASET_DOI}}
+          
